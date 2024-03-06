@@ -1,0 +1,15 @@
+service: ttp-gym-lambda
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1 # Escolha a região desejada
+
+functions:
+  buscaUsuario:
+    handler: handler.findUser # Isso indica que a função `findUser` no arquivo `handler.js` é o ponto de entrada
+    events:
+      - http:
+          path: busca-usuario
+          method: get
+          cors: true
