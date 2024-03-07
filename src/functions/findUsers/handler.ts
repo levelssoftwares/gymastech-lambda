@@ -20,7 +20,7 @@ export const findDbUsers: APIGatewayProxyHandler = async (event) => {
   await client.connect();
 
   // Lista de bancos de dados para iterar. O Ideal é escrever uma função para trazer diretamente do Mongo o nome dos Bancos de Dados
-  const databases = ["TTP-GYM", "NOME_DA_COMPANHIA"]; // Adicione outros bancos de dados conforme necessário.
+  const databases = ["TTP-GYM", "NOME_DA_COMPANHIA"]; // pode adiciona mais banco, desde que estjam criados.
   try {
     for (const dbName of databases) {
       const db = client.db(dbName);
