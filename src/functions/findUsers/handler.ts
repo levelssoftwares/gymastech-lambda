@@ -34,7 +34,6 @@ export const findDbUsers: APIGatewayProxyHandler = async (event) => {
           user,
           databaseName: dbName,
         };
-
         return {
           statusCode: 200,
           body: JSON.stringify(response),
