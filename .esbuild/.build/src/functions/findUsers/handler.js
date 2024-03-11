@@ -26829,14 +26829,17 @@ var findDbUsers = async (event) => {
   }
   const client = new import_mongodb.MongoClient(MONGO_URI);
   await client.connect();
-  const databases = ["TTP-GYM", "NOME_DA_COMPANHIA"];
   try {
+    const adminDb = client.db("admin").admin();
+    const dbList = await adminDb.listDatabases();
+    const databases = dbList.databases.map((db) => db.name);
     for (const dbName of databases) {
       const db = client.db(dbName);
       const usersCollection = db.collection("Users");
       const user = await usersCollection.findOne({ _id: userId });
       if (user) {
         await client.close();
+        console.log("dbName", dbName);
         const response = {
           user,
           databaseName: dbName
