@@ -1,5 +1,5 @@
 import type { AWS } from "@serverless/typescript";
-import { findUsers } from "@functions/index";
+import { findUsers, createCompanyMainDB } from "@functions/index";
 
 const serverlessConfiguration: AWS = {
   service: "ttp-lambdas",
@@ -25,6 +25,7 @@ const serverlessConfiguration: AWS = {
   },
   functions: {
     findUsers,
+    createCompanyMainDB
   },
   package: { individually: true },
   custom: {
