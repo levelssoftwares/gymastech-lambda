@@ -26777,7 +26777,7 @@ var require_main = __commonJS({
   }
 });
 
-// src/functions/findUsers/handler.ts
+// src/functions/findUsersbyId/handler.ts
 var handler_exports = {};
 __export(handler_exports, {
   findDbUsers: () => findDbUsers
@@ -26796,7 +26796,7 @@ if (g) {
   }
 }
 
-// src/functions/findUsers/handler.ts
+// src/functions/findUsersbyId/handler.ts
 var import_mongodb = __toESM(require_lib3());
 
 // src/utils/mongoConfig.ts
@@ -26814,7 +26814,7 @@ var headers = {
   "x-api-key": API_KEY
 };
 
-// src/functions/findUsers/handler.ts
+// src/functions/findUsersbyId/handler.ts
 var findDbUsers = async (event) => {
   var _a;
   const userId = (_a = event.queryStringParameters) == null ? void 0 : _a.userId;
@@ -26839,15 +26839,7 @@ var findDbUsers = async (event) => {
       const user = await usersCollection.findOne({ _id: userId });
       if (user) {
         await client.close();
-        if (user.role !== "admin" && user.role !== "customer") {
-          return {
-            statusCode: 403,
-            body: JSON.stringify({
-              message: "Ops. Voc\xEA n\xE3o possui permiss\xE3o para entrar."
-            }),
-            headers
-          };
-        }
+        console.log("dbName", dbName);
         const response = {
           user,
           databaseName: dbName
