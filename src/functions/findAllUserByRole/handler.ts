@@ -32,8 +32,6 @@ export const findUsersByDatabaseAndRole: APIGatewayProxyHandler = async (
 
     const users = await usersCollection.find(query).toArray();
 
-    await client.close();
-
     if (users.length > 0) {
       return {
         statusCode: 200,
@@ -41,18 +39,28 @@ export const findUsersByDatabaseAndRole: APIGatewayProxyHandler = async (
         headers,
       };
     } else {
+      let message = "Nenhum usuário encontrado.";
+      if (role === "personal") {
+        message = "Nenhum personal encontrado.";
+      } else if (role === "alunos") {
+        message = "Nenhum aluno encontrado.";
+      }
+
       return {
         statusCode: 404,
         body: JSON.stringify({
-          message: "Nenhum usuário encontrado.",
+          message,
         }),
         headers,
       };
     }
   } catch (error) {
-    console.error('ERROR:', error.response.status, 'Message:', error.response.data.message);
-    await client.close();
-
+    console.error(
+      "ERROR:",
+      error.response?.status,
+      "Message:",
+      error.response?.data?.message
+    );
     return {
       statusCode: 500,
       body: JSON.stringify({
@@ -60,5 +68,7 @@ export const findUsersByDatabaseAndRole: APIGatewayProxyHandler = async (
       }),
       headers,
     };
+  } finally {
+    await client.close();
   }
 };

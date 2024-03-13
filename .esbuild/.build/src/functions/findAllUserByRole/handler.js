@@ -26257,7 +26257,7 @@ var headers = {
 
 // src/functions/findAllUserByRole/handler.ts
 var findUsersByDatabaseAndRole = async (event) => {
-  var _a, _b;
+  var _a, _b, _c, _d, _e;
   const databaseName = (_a = event.queryStringParameters) == null ? void 0 : _a.databaseName;
   const role = (_b = event.queryStringParameters) == null ? void 0 : _b.role;
   if (!databaseName) {
@@ -26279,7 +26279,6 @@ var findUsersByDatabaseAndRole = async (event) => {
       query = { role };
     }
     const users = await usersCollection.find(query).toArray();
-    await client.close();
     if (users.length > 0) {
       return {
         statusCode: 200,
@@ -26287,17 +26286,27 @@ var findUsersByDatabaseAndRole = async (event) => {
         headers
       };
     } else {
+      let message = "Nenhum usu\xE1rio encontrado.";
+      if (role === "personal") {
+        message = "Nenhum personal encontrado.";
+      } else if (role === "alunos") {
+        message = "Nenhum aluno encontrado.";
+      }
       return {
         statusCode: 404,
         body: JSON.stringify({
-          message: "Nenhum usu\xE1rio encontrado."
+          message
         }),
         headers
       };
     }
   } catch (error) {
-    console.error("ERROR:", error.response.status, "Message:", error.response.data.message);
-    await client.close();
+    console.error(
+      "ERROR:",
+      (_c = error.response) == null ? void 0 : _c.status,
+      "Message:",
+      (_e = (_d = error.response) == null ? void 0 : _d.data) == null ? void 0 : _e.message
+    );
     return {
       statusCode: 500,
       body: JSON.stringify({
@@ -26305,6 +26314,8 @@ var findUsersByDatabaseAndRole = async (event) => {
       }),
       headers
     };
+  } finally {
+    await client.close();
   }
 };
 // Annotate the CommonJS export names for ESM import in node:
