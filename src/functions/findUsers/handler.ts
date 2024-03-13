@@ -31,7 +31,15 @@ export const findDbUsers: APIGatewayProxyHandler = async (event) => {
 
       if (user) {
         await client.close();
-        if (
+        if (!user.isActive) {
+          return {
+            statusCode: 403,
+            body: JSON.stringify({
+              message: "Você está inativo. Contate o administrador",
+            }),
+            headers,
+          };
+        } else if (
           user.role !== "admin" &&
           user.role !== "customer" &&
           user.role !== "personal"
