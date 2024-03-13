@@ -31,7 +31,11 @@ export const findDbUsers: APIGatewayProxyHandler = async (event) => {
 
       if (user) {
         await client.close();
-        if (user.role !== "admin" && user.role !== "customer") {
+        if (
+          user.role !== "admin" &&
+          user.role !== "customer" &&
+          user.role !== "personal"
+        ) {
           return {
             statusCode: 403,
             body: JSON.stringify({

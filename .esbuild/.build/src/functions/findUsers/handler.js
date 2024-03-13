@@ -26839,7 +26839,7 @@ var findDbUsers = async (event) => {
       const user = await usersCollection.findOne({ _id: userId });
       if (user) {
         await client.close();
-        if (user.role !== "admin" && user.role !== "customer") {
+        if (user.role !== "admin" && user.role !== "customer" && user.role !== "personal") {
           return {
             statusCode: 403,
             body: JSON.stringify({
