@@ -26839,7 +26839,23 @@ var findDbUsers = async (event) => {
       const user = await usersCollection.findOne({ _id: userId });
       if (user) {
         await client.close();
-        console.log("dbName", dbName);
+        if (!user.isActive) {
+          return {
+            statusCode: 403,
+            body: JSON.stringify({
+              message: "Voc\xEA est\xE1 inativo. Contate o administrador"
+            }),
+            headers
+          };
+        } else if (user.role !== "admin" && user.role !== "customer" && user.role !== "personal") {
+          return {
+            statusCode: 403,
+            body: JSON.stringify({
+              message: "Ops. Voc\xEA n\xE3o possui permiss\xE3o para entrar."
+            }),
+            headers
+          };
+        }
         const response = {
           user,
           databaseName: dbName

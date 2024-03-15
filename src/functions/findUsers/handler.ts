@@ -31,7 +31,28 @@ export const findDbUsers: APIGatewayProxyHandler = async (event) => {
 
       if (user) {
         await client.close();
-        console.log("dbName", dbName);
+        if (!user.isActive) {
+          return {
+            statusCode: 403,
+            body: JSON.stringify({
+              message: "Você está inativo. Contate o administrador",
+            }),
+            headers,
+          };
+        } else if (
+          user.role !== "admin" &&
+          user.role !== "customer" &&
+          user.role !== "personal"
+        ) {
+          return {
+            statusCode: 403,
+            body: JSON.stringify({
+              message: "Ops. Você não possui permissão para entrar.",
+            }),
+            headers,
+          };
+        }
+
         const response = {
           user,
           databaseName: dbName,
