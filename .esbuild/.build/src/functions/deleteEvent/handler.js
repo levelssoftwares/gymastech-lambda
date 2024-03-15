@@ -26232,10 +26232,10 @@ var require_main = __commonJS({
   }
 });
 
-// src/functions/findEvents/handler.ts
+// src/functions/deleteEvent/handler.ts
 var handler_exports = {};
 __export(handler_exports, {
-  fetchAllEventsHandler: () => fetchAllEventsHandler
+  deleteEvent: () => deleteEvent
 });
 module.exports = __toCommonJS(handler_exports);
 var import_mongodb = __toESM(require_lib3());
@@ -26255,26 +26255,38 @@ var headers = {
   "x-api-key": API_KEY
 };
 
-// src/functions/findEvents/handler.ts
-var fetchAllEventsHandler = async (event) => {
-  var _a;
-  const dbName = (_a = event.queryStringParameters) == null ? void 0 : _a.dbName;
+// src/functions/deleteEvent/handler.ts
+var deleteEvent = async (event) => {
+  var _a, _b;
+  const eventId = (_a = event.queryStringParameters) == null ? void 0 : _a.eventId;
+  const dbName = (_b = event.queryStringParameters) == null ? void 0 : _b.dbName;
   try {
     const client = new import_mongodb.MongoClient(MONGO_URI);
     await client.connect();
-    const events = await client.db(dbName).collection("Events").find({}).toArray();
+    const response = await client.db(dbName).collection("Events").deleteOne({ _id: eventId });
     await client.close();
-    console.log("events", events);
-    return {
-      statusCode: 200,
-      body: JSON.stringify(events),
-      headers
-    };
+    if (response.deletedCount === 1) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          message: "Evento deletado com sucesso."
+        }),
+        headers
+      };
+    } else {
+      return {
+        statusCode: 404,
+        body: JSON.stringify({
+          message: "Evento n\xE3o encontrado."
+        }),
+        headers
+      };
+    }
   } catch (error) {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: error.message || "Falha ao buscar eventos."
+        message: error.message || "Falha ao deletar evento."
       }),
       headers
     };
@@ -26282,6 +26294,6 @@ var fetchAllEventsHandler = async (event) => {
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  fetchAllEventsHandler
+  deleteEvent
 });
 //# sourceMappingURL=handler.js.map

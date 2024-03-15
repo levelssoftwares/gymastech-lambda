@@ -6,7 +6,7 @@ export const createEvent: APIGatewayProxyHandler = async (event) => {
   const eventData = JSON.parse(event.body);
   const dbName = event.queryStringParameters?.dbName;
 
-  const { start, end, title, color } = eventData;
+  const {_id, start, end, title, color } = eventData;
   try {
     const client = new MongoClient(MONGO_URI);
     await client.connect();
@@ -14,7 +14,7 @@ export const createEvent: APIGatewayProxyHandler = async (event) => {
     const response = await client
       .db(dbName)
       .collection("Events")
-      .insertOne({ start, end, title, color });
+      .insertOne({ _id, start, end, title, color });
 
     await client.close();
 
@@ -22,7 +22,7 @@ export const createEvent: APIGatewayProxyHandler = async (event) => {
       statusCode: 200,
       body: JSON.stringify({
         message: "Evento salvo com sucesso.",
-        insertedEvent: response
+        insertedEvent: response,
       }),
       headers,
     };

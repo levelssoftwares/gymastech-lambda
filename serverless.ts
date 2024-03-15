@@ -6,6 +6,7 @@ import {
   disableUser,
   createEvent,
   findEvents,
+  deleteEvents,
 } from "@functions/index";
 
 const serverlessConfiguration: AWS = {
@@ -37,6 +38,7 @@ const serverlessConfiguration: AWS = {
     disableUser,
     createEvent,
     findEvents,
+    deleteEvents,
   },
   package: { individually: true },
   custom: {

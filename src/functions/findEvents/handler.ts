@@ -18,7 +18,7 @@ export const fetchAllEventsHandler: APIGatewayProxyHandler = async (
       .toArray();
 
     await client.close();
-
+    console.log('events', events)
     return {
       statusCode: 200,
       body: JSON.stringify(events),

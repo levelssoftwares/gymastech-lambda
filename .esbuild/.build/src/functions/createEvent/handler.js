@@ -26260,11 +26260,11 @@ var createEvent = async (event) => {
   var _a;
   const eventData = JSON.parse(event.body);
   const dbName = (_a = event.queryStringParameters) == null ? void 0 : _a.dbName;
-  const { start, end, title, color } = eventData;
+  const { _id, start, end, title, color } = eventData;
   try {
     const client = new import_mongodb.MongoClient(MONGO_URI);
     await client.connect();
-    const response = await client.db(dbName).collection("Events").insertOne({ start, end, title, color });
+    const response = await client.db(dbName).collection("Events").insertOne({ _id, start, end, title, color });
     await client.close();
     return {
       statusCode: 200,

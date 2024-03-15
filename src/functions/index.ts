@@ -4,6 +4,8 @@ export { default as findUsersByDatabaseAndRole } from './findAllUserByRole';
 export { default as disableUser } from './disableUser';
 export { default as createEvent } from './createEvent';
 export { default as findEvents } from './findEvents';
+export { default as deleteEvents } from './deleteEvent';
+
 
 
 
