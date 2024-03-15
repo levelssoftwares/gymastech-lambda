@@ -38,22 +38,7 @@ export const findUsersByDatabaseAndRole: APIGatewayProxyHandler = async (
         body: JSON.stringify(users),
         headers,
       };
-    } else {
-      let message = "Nenhum usuário encontrado.";
-      if (role === "personal") {
-        message = "Nenhum personal encontrado.";
-      } else if (role === "alunos") {
-        message = "Nenhum aluno encontrado.";
-      }
-
-      return {
-        statusCode: 404,
-        body: JSON.stringify({
-          message,
-        }),
-        headers,
-      };
-    }
+    } 
   } catch (error) {
     console.error(
       "ERROR:",

@@ -26285,20 +26285,6 @@ var findUsersByDatabaseAndRole = async (event) => {
         body: JSON.stringify(users),
         headers
       };
-    } else {
-      let message = "Nenhum usu\xE1rio encontrado.";
-      if (role === "personal") {
-        message = "Nenhum personal encontrado.";
-      } else if (role === "alunos") {
-        message = "Nenhum aluno encontrado.";
-      }
-      return {
-        statusCode: 404,
-        body: JSON.stringify({
-          message
-        }),
-        headers
-      };
     }
   } catch (error) {
     console.error(
