@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/functions/deleteKanbanSales/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,wBAAwB,CAAC;AAErD,eAAe;IACb,OAAO,EAAE,GAAG,WAAW,CAAC,SAAS,CAAC,4BAA4B;IAC9D,MAAM,EAAE;QACN;YACE,IAAI,EAAE;gBACJ,MAAM,EAAE,QAAQ;gBAChB,IAAI,EAAE,aAAa;gBACnB,IAAI,EAAE,IAAI;aACX;SACF;KACF;CACF,CAAC"}
