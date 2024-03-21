@@ -11,6 +11,7 @@ import {
   findKanbanSales,
   updateKanbanSales,
   deleteKanbanSales,
+  createWorkout,
 } from "@functions/index";
 
 const serverlessConfiguration: AWS = {
@@ -47,6 +48,7 @@ const serverlessConfiguration: AWS = {
     findKanbanSales,
     updateKanbanSales,
     deleteKanbanSales,
+    createWorkout,
   },
   package: { individually: true },
   custom: {
