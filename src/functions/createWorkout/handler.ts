@@ -10,7 +10,7 @@ export const createWorkout: APIGatewayProxyHandler = async (event) => {
     const client = new MongoClient(MONGO_URI);
     await client.connect();
 
-    const response = await client
+     await client
       .db(dbName)
       .collection("Workouts")
       .insertOne(workoutEventData);
@@ -21,7 +21,7 @@ export const createWorkout: APIGatewayProxyHandler = async (event) => {
       statusCode: 200,
       body: JSON.stringify({
         message: "Evento de treino salvo com sucesso.",
-        insertedWorkoutEvent: response,
+        insertedWorkoutEvent: workoutEventData,
       }),
       headers,
     };

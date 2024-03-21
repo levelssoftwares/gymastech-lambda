@@ -26232,10 +26232,10 @@ var require_main = __commonJS({
   }
 });
 
-// src/functions/createWorkout/handler.ts
+// src/functions/findWorkoutsUser/handler.ts
 var handler_exports = {};
 __export(handler_exports, {
-  createWorkout: () => createWorkout
+  findWorkoutsUser: () => findWorkoutsUser
 });
 module.exports = __toCommonJS(handler_exports);
 var import_mongodb = __toESM(require_lib3());
@@ -26255,29 +26255,29 @@ var headers = {
   "x-api-key": API_KEY
 };
 
-// src/functions/createWorkout/handler.ts
-var createWorkout = async (event) => {
-  var _a;
-  const workoutEventData = JSON.parse(event.body);
-  const dbName = (_a = event.queryStringParameters) == null ? void 0 : _a.dbName;
+// src/functions/findWorkoutsUser/handler.ts
+var findWorkoutsUser = async (event) => {
+  var _a, _b;
+  const userId = (_a = event.queryStringParameters) == null ? void 0 : _a.userId;
+  const dbName = (_b = event.queryStringParameters) == null ? void 0 : _b.dbName;
   try {
+    if (!userId || !dbName) {
+      throw new Error("ID do usu\xE1rio e nome do banco de dados s\xE3o obrigat\xF3rios.");
+    }
     const client = new import_mongodb.MongoClient(MONGO_URI);
     await client.connect();
-    await client.db(dbName).collection("Workouts").insertOne(workoutEventData);
+    const workouts = await client.db(dbName).collection("Workouts").find({ alunoId: userId }).toArray();
     await client.close();
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        message: "Evento de treino salvo com sucesso.",
-        insertedWorkoutEvent: workoutEventData
-      }),
+      body: JSON.stringify(workouts),
       headers
     };
   } catch (error) {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: error.message || "Falha ao inserir evento de treino."
+        message: error.message || "Falha ao buscar os workouts do usu\xE1rio."
       }),
       headers
     };
@@ -26285,6 +26285,6 @@ var createWorkout = async (event) => {
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  createWorkout
+  findWorkoutsUser
 });
 //# sourceMappingURL=handler.js.map

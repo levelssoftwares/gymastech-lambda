@@ -10,6 +10,8 @@ export { default as findKanbanSales } from './findKanbanSales';
 export { default as updateKanbanSales } from './updateKanbanSales';
 export { default as  deleteKanbanSales} from './deleteKanbanSales';
 export { default as  createWorkout} from './createWorkout';
+export { default as  findWorkoutsUser} from './findWorkoutsUser';
+
 
 
 
