@@ -5,15 +5,41 @@ import { MONGO_URI, headers } from "src/utils/mongoConfig";
 export const createWorkout: APIGatewayProxyHandler = async (event) => {
   const workoutEventData = JSON.parse(event.body);
   const dbName = event.queryStringParameters?.dbName;
+  const userId = workoutEventData.userId;
+  const date = workoutEventData.date;
+  const alunoId = workoutEventData.alunoId;
+
+  if (!alunoId || !dbName) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: "Aluno ID ou nome do banco de dados não fornecido.",
+      }),
+      headers,
+    };
+  }
 
   try {
     const client = new MongoClient(MONGO_URI);
     await client.connect();
 
-     await client
+    const existingWorkout = await client
       .db(dbName)
       .collection("Workouts")
-      .insertOne(workoutEventData);
+      .findOne({ userId: userId, date: date });
+
+    if (existingWorkout) {
+      await client.close();
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          message: "Já existe um treino para este usuário nesta data.",
+        }),
+        headers,
+      };
+    }
+
+    await client.db(dbName).collection("Workouts").insertOne(workoutEventData);
 
     await client.close();
 

@@ -26260,9 +26260,32 @@ var createWorkout = async (event) => {
   var _a;
   const workoutEventData = JSON.parse(event.body);
   const dbName = (_a = event.queryStringParameters) == null ? void 0 : _a.dbName;
+  const userId = workoutEventData.userId;
+  const date = workoutEventData.date;
+  const alunoId = workoutEventData.alunoId;
+  if (!alunoId || !dbName) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: "Aluno ID ou nome do banco de dados n\xE3o fornecido."
+      }),
+      headers
+    };
+  }
   try {
     const client = new import_mongodb.MongoClient(MONGO_URI);
     await client.connect();
+    const existingWorkout = await client.db(dbName).collection("Workouts").findOne({ userId, date });
+    if (existingWorkout) {
+      await client.close();
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          message: "J\xE1 existe um treino para este usu\xE1rio nesta data."
+        }),
+        headers
+      };
+    }
     await client.db(dbName).collection("Workouts").insertOne(workoutEventData);
     await client.close();
     return {
