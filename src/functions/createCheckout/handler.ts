@@ -1,7 +1,6 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
 import { MongoClient } from "mongodb";
 import { MONGO_URI, headers } from "src/utils/mongoConfig";
-import { DateTime } from "luxon";
 
 export const updateCheckouts: APIGatewayProxyHandler = async (event) => {
   const { dbName, alunoId } = event.queryStringParameters || {};
@@ -20,9 +19,14 @@ export const updateCheckouts: APIGatewayProxyHandler = async (event) => {
     const client = new MongoClient(MONGO_URI);
     await client.connect();
 
-    // Definindo o fuso horário para o Brasil (America/Sao_Paulo)
-    const brazilDateTime = DateTime.now().setZone('America/Sao_Paulo');
-    const currentMonth = brazilDateTime.toLocaleString({ month: "long" });
+    const currentDate = new Date();
+    const currentMonth = currentDate.toLocaleString("default", {
+      month: "long",
+    });
+    
+    // Ajustar o fuso horário para o Brasil (BRT)
+    currentDate.setUTCHours(currentDate.getUTCHours() - 3);
+    const currentDayHour = currentDate.toISOString().slice(0, 19);
 
     // Obter o último objeto do mês corrente para o aluno
     const lastCheckin = await client
@@ -44,8 +48,6 @@ export const updateCheckouts: APIGatewayProxyHandler = async (event) => {
 
     const lastCheckinDate = Object.keys(lastCheckin[currentMonth]).pop(); // Obter a última entrada
 
-    // Definindo a data e hora atual com o fuso horário do Brasil
-    const currentDateISO = brazilDateTime.toISO();
 
     // Atualizar o campo 'saida' do último check-in
     await client
@@ -53,7 +55,7 @@ export const updateCheckouts: APIGatewayProxyHandler = async (event) => {
       .collection("Checkins")
       .updateOne(
         { alunoId, [`${currentMonth}.${lastCheckinDate}.saida`]: null },
-        { $set: { [`${currentMonth}.${lastCheckinDate}.saida`]: currentDateISO } }
+        { $set: { [`${currentMonth}.${lastCheckinDate}.saida`]: currentDayHour } }
       );
 
     await client.close();

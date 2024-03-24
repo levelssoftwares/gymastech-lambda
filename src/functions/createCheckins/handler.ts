@@ -28,7 +28,10 @@ export const createCheckins: APIGatewayProxyHandler = async (event) => {
     const currentMonth = currentDate.toLocaleString("default", {
       month: "long",
     });
-    const currentDayHour = currentDate.toISOString().slice(0, 19); // Obtém a data e hora no formato YYYY-MM-DDTHH:MM:SS
+    
+    // Ajustar o fuso horário para o Brasil (BRT)
+    currentDate.setUTCHours(currentDate.getUTCHours() - 3);
+    const currentDayHour = currentDate.toISOString().slice(0, 19);
 
     // Obter o último registro de check-in do aluno
     const lastCheckin = await client

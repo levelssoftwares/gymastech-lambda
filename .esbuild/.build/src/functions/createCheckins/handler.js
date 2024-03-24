@@ -26274,6 +26274,7 @@ var createCheckins = async (event) => {
     const currentMonth = currentDate.toLocaleString("default", {
       month: "long"
     });
+    currentDate.setUTCHours(currentDate.getUTCHours() - 3);
     const currentDayHour = currentDate.toISOString().slice(0, 19);
     const lastCheckin = await client.db(dbName).collection("Checkins").findOne({ alunoId }, { sort: { $natural: -1 } });
     if (lastCheckin && lastCheckin[currentMonth]) {
