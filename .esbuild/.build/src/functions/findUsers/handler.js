@@ -26833,12 +26833,10 @@ var findDbUsers = async (event) => {
     const adminDb = client.db("admin").admin();
     const dbList = await adminDb.listDatabases();
     const databases = dbList.databases.map((db) => db.name);
-    console.log("databases", databases);
     for (const dbName of databases) {
       const db = client.db(dbName);
       const usersCollection = db.collection("Users");
       const user = await usersCollection.findOne({ _id: userId });
-      console.log("user", user);
       if (user) {
         await client.close();
         if (!user.isActive) {
