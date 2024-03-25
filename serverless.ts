@@ -15,6 +15,7 @@ import {
   findWorkoutsUser,
   createCheckins,
   createCheckout,
+  fetchCheckins,
 } from "@functions/index";
 
 const serverlessConfiguration: AWS = {
@@ -55,6 +56,7 @@ const serverlessConfiguration: AWS = {
     findWorkoutsUser,
     createCheckins,
     createCheckout,
+    fetchCheckins,
   },
   package: { individually: true },
   custom: {
