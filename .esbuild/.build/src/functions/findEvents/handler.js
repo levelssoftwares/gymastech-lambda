@@ -26264,7 +26264,6 @@ var fetchAllEventsHandler = async (event) => {
     await client.connect();
     const events = await client.db(dbName).collection("Events").find({}).toArray();
     await client.close();
-    console.log("events", events);
     return {
       statusCode: 200,
       body: JSON.stringify(events),
