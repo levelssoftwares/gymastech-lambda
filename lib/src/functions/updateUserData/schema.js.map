@@ -1,0 +1,1 @@
+{"version":3,"file":"schema.js","sourceRoot":"","sources":["../../../../src/functions/updateUserData/schema.ts"],"names":[],"mappings":"AAAA,eAAe;IACb,IAAI,EAAE,QAAQ;IACd,UAAU,EAAE;QACV,MAAM,EAAE,EAAE,IAAI,EAAE,QAAQ,EAAE;KAC3B;IACD,QAAQ,EAAE,CAAC,QAAQ,CAAC;CACZ,CAAC"}

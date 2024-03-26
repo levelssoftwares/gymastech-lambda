@@ -41,7 +41,7 @@ export const findDbUsers: APIGatewayProxyHandler = async (event) => {
           };
         } else if (
           user.role !== "admin" &&
-          user.role !== "customer" &&
+          user.role !== "recepção" &&
           user.role !== "personal"
         ) {
           return {
