@@ -14,4 +14,6 @@ export { default as findWorkoutsUser } from "./findWorkoutsUser";
 export { default as createCheckins } from "./createCheckins";
 export { default as createCheckout } from "./createCheckout";
 export { default as fetchCheckins } from "./fetchCheckins";
+export { default as updateUserData } from "./updateUserData";
+
 
