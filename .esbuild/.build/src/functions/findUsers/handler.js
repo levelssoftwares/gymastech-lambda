@@ -26847,7 +26847,7 @@ var findDbUsers = async (event) => {
             }),
             headers
           };
-        } else if (user.role !== "admin" && user.role !== "customer" && user.role !== "personal") {
+        } else if (user.role !== "admin" && user.role !== "recep\xE7\xE3o" && user.role !== "personal") {
           return {
             statusCode: 403,
             body: JSON.stringify({
