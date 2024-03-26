@@ -2,10 +2,8 @@ import { APIGatewayProxyHandler } from "aws-lambda";
 import { MongoClient } from "mongodb";
 import { MONGO_URI, headers } from "src/utils/mongoConfig";
 
-export const fetchAllEventsHandler: APIGatewayProxyHandler = async (
-  event
-) => {
-  const dbName = event.queryStringParameters?.dbName
+export const fetchAllEventsHandler: APIGatewayProxyHandler = async (event) => {
+  const dbName = event.queryStringParameters?.dbName;
 
   try {
     const client = new MongoClient(MONGO_URI);
@@ -18,7 +16,7 @@ export const fetchAllEventsHandler: APIGatewayProxyHandler = async (
       .toArray();
 
     await client.close();
-    console.log('events', events)
+
     return {
       statusCode: 200,
       body: JSON.stringify(events),
