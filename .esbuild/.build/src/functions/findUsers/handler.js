@@ -16934,7 +16934,7 @@ var require_client_metadata = __commonJS({
     }
     exports.makeClientMetadata = makeClientMetadata;
     function getFAASEnv() {
-      const { AWS_EXECUTION_ENV = "", AWS_LAMBDA_RUNTIME_API = "", FUNCTIONS_WORKER_RUNTIME = "", K_SERVICE = "", FUNCTION_NAME = "", VERCEL = "", AWS_LAMBDA_FUNCTION_MEMORY_SIZE = "", AWS_REGION = "", FUNCTION_MEMORY_MB = "", FUNCTION_REGION = "", FUNCTION_TIMEOUT_SEC = "", VERCEL_REGION = "" } = process2.env;
+      const { AWS_EXECUTION_ENV = "", AWS_LAMBDA_RUNTIME_API = "", FUNCTIONS_WORKER_RUNTIME = "", K_SERVICE = "", FUNCTION_NAME = "", VERCEL = "", AWS_LAMBDA_FUNCTION_MEMORY_SIZE = "", AWS_REGION: AWS_REGION2 = "", FUNCTION_MEMORY_MB = "", FUNCTION_REGION = "", FUNCTION_TIMEOUT_SEC = "", VERCEL_REGION = "" } = process2.env;
       const isAWSFaaS = AWS_EXECUTION_ENV.startsWith("AWS_Lambda_") || AWS_LAMBDA_RUNTIME_API.length > 0;
       const isAzureFaaS = FUNCTIONS_WORKER_RUNTIME.length > 0;
       const isGCPFaaS = K_SERVICE.length > 0 || FUNCTION_NAME.length > 0;
@@ -16948,8 +16948,8 @@ var require_client_metadata = __commonJS({
         return faasEnv;
       }
       if (isAWSFaaS && !(isAzureFaaS || isGCPFaaS || isVercelFaaS)) {
-        if (AWS_REGION.length > 0) {
-          faasEnv.set("region", AWS_REGION);
+        if (AWS_REGION2.length > 0) {
+          faasEnv.set("region", AWS_REGION2);
         }
         if (AWS_LAMBDA_FUNCTION_MEMORY_SIZE.length > 0 && Number.isInteger(+AWS_LAMBDA_FUNCTION_MEMORY_SIZE)) {
           faasEnv.set("memory_mb", new bson_1.Int32(AWS_LAMBDA_FUNCTION_MEMORY_SIZE));
@@ -19007,13 +19007,13 @@ var require_mongodb_aws = __commonJS({
         });
         return makeMongoCredentialsFromAWSTemp(creds);
       } else {
-        let { AWS_STS_REGIONAL_ENDPOINTS = "", AWS_REGION = "" } = process2.env;
+        let { AWS_STS_REGIONAL_ENDPOINTS = "", AWS_REGION: AWS_REGION2 = "" } = process2.env;
         AWS_STS_REGIONAL_ENDPOINTS = AWS_STS_REGIONAL_ENDPOINTS.toLowerCase();
-        AWS_REGION = AWS_REGION.toLowerCase();
-        const awsRegionSettingsExist = AWS_REGION.length !== 0 && AWS_STS_REGIONAL_ENDPOINTS.length !== 0;
-        const useRegionalSts = AWS_STS_REGIONAL_ENDPOINTS === "regional" || AWS_STS_REGIONAL_ENDPOINTS === "legacy" && !LEGACY_REGIONS.has(AWS_REGION);
+        AWS_REGION2 = AWS_REGION2.toLowerCase();
+        const awsRegionSettingsExist = AWS_REGION2.length !== 0 && AWS_STS_REGIONAL_ENDPOINTS.length !== 0;
+        const useRegionalSts = AWS_STS_REGIONAL_ENDPOINTS === "regional" || AWS_STS_REGIONAL_ENDPOINTS === "legacy" && !LEGACY_REGIONS.has(AWS_REGION2);
         const provider = awsRegionSettingsExist && useRegionalSts ? MongoDBAWS.credentialProvider.fromNodeProviderChain({
-          clientConfig: { region: AWS_REGION }
+          clientConfig: { region: AWS_REGION2 }
         }) : MongoDBAWS.credentialProvider.fromNodeProviderChain();
         try {
           const creds = await provider();
@@ -26804,6 +26804,8 @@ var dotenv = __toESM(require_main());
 dotenv.config();
 var MONGO_URI = process.env.MONGO_URI || "";
 var DB_NAME = process.env.DB_NAME || "";
+var AWS_REGION = process.env.AWS_REGION || "";
+var AWS_S3_BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME || "";
 var COLLECTION_NAME_USERS = process.env.COLLECTION_NAME || "";
 var COLLECTION_NAME_WORKOUTS = process.env.COLLECTION_NAME_WORKOUTS || "";
 var API_KEY = process.env.API_KEY || "";

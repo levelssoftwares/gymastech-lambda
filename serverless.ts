@@ -17,6 +17,8 @@ import {
   createCheckout,
   fetchCheckins,
   updateUserData,
+  makeDBBackup,
+  makeBackupDownload,
 } from "@functions/index";
 
 const serverlessConfiguration: AWS = {
@@ -59,6 +61,8 @@ const serverlessConfiguration: AWS = {
     createCheckout,
     fetchCheckins,
     updateUserData,
+    makeDBBackup,
+    makeBackupDownload,
   },
   package: { individually: true },
   custom: {
