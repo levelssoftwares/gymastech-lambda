@@ -6,6 +6,7 @@ interface UpdateUserData {
   _id: string;
   firstName: string;
   lastName: string;
+  phoneNumber: string;
   cep: string;
   address: string;
   homeNumber: string;
@@ -18,13 +19,14 @@ export const updateUserData: APIGatewayProxyHandler = async (event) => {
     const data = JSON.parse(event.body);
     const dbName = event.queryStringParameters?.dbName;
 
-    const { _id, firstName, lastName, cep, address, homeNumber, state, role } =
+    const { _id, firstName, lastName, phoneNumber, cep, address, homeNumber, state, role } =
       data;
 
     const updatedUserData: UpdateUserData = {
       _id,
       firstName,
       lastName,
+      phoneNumber,
       cep,
       address,
       homeNumber,

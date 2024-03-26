@@ -26264,7 +26264,6 @@ var fetchKanbanSales = async (event) => {
     await client.connect();
     const tasks = await client.db(dbName).collection("Sales").find({}).toArray();
     await client.close();
-    console.log("JSON.stringify(tasks),", JSON.stringify(tasks));
     return {
       statusCode: 200,
       body: JSON.stringify(tasks),

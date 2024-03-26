@@ -2,7 +2,6 @@ import { APIGatewayProxyHandler } from "aws-lambda";
 import { MongoClient } from "mongodb";
 import { MONGO_URI, headers } from "src/utils/mongoConfig";
 
-
 export const fetchKanbanSales: APIGatewayProxyHandler = async (event) => {
   try {
     const dbName = event.queryStringParameters?.dbName;
@@ -17,7 +16,6 @@ export const fetchKanbanSales: APIGatewayProxyHandler = async (event) => {
       .toArray();
 
     await client.close();
-    console.log('JSON.stringify(tasks),', JSON.stringify(tasks),)
     return {
       statusCode: 200,
       body: JSON.stringify(tasks),

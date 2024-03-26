@@ -26261,11 +26261,12 @@ var updateUserData = async (event) => {
   try {
     const data = JSON.parse(event.body);
     const dbName = (_a = event.queryStringParameters) == null ? void 0 : _a.dbName;
-    const { _id, firstName, lastName, cep, address, homeNumber, state, role } = data;
+    const { _id, firstName, lastName, phoneNumber, cep, address, homeNumber, state, role } = data;
     const updatedUserData = {
       _id,
       firstName,
       lastName,
+      phoneNumber,
       cep,
       address,
       homeNumber,
