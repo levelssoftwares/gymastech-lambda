@@ -16,7 +16,7 @@ export const findDocuments: APIGatewayProxyHandler = async (event) => {
       .toArray();
 
     await client.close();
-    console.log('AAAAA', events)
+
     return {
       statusCode: 200,
       body: JSON.stringify(events),

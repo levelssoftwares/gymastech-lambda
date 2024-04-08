@@ -26267,7 +26267,6 @@ var findDocuments = async (event) => {
     await client.connect();
     const events = await client.db(dbName).collection("Documents").find({}).toArray();
     await client.close();
-    console.log("AAAAA", events);
     return {
       statusCode: 200,
       body: JSON.stringify(events),
