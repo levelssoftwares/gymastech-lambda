@@ -17,6 +17,8 @@ export { default as fetchCheckins } from "./fetchCheckins";
 export { default as updateUserData } from "./updateUserData";
 export { default as makeDBBackup } from "./makeDBBackup";
 export { default as makeBackupDownload } from "./makeBackupDownload";
+export { default as uploadFilesToS3 } from "./uploadFilesToS3";
+
 
 
 
