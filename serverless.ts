@@ -20,6 +20,7 @@ import {
   makeDBBackup,
   makeBackupDownload,
   uploadFilesToS3,
+  findDocuments,
 } from "@functions/index";
 
 const serverlessConfiguration: AWS = {
@@ -65,6 +66,7 @@ const serverlessConfiguration: AWS = {
     makeDBBackup,
     makeBackupDownload,
     uploadFilesToS3,
+    findDocuments
   },
   package: { individually: true },
   custom: {

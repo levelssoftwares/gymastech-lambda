@@ -18,6 +18,8 @@ export { default as updateUserData } from "./updateUserData";
 export { default as makeDBBackup } from "./makeDBBackup";
 export { default as makeBackupDownload } from "./makeBackupDownload";
 export { default as uploadFilesToS3 } from "./uploadFilesToS3";
+export { default as findDocuments } from "./findDocuments";
+
 
 
 
