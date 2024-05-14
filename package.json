@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && sls offline",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "dotenv -e .env sls offline --stage dev",
+    "deploy:dev": "sls deploy --stage dev"
   },
   "keywords": [],
   "author": "",
