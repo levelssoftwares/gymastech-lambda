@@ -1,6 +1,6 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
 import { S3 } from "aws-sdk";
-import { AWS_REGION, AWS_S3_BUCKET_NAME } from "src/utils/mongoConfig";
+import { REGION_NAME, AWS_S3_BUCKET_NAME } from "src/utils/mongoConfig";
 
 export const downloadBackupFromS3: APIGatewayProxyHandler = async (event) => {
   try {
@@ -15,7 +15,7 @@ export const downloadBackupFromS3: APIGatewayProxyHandler = async (event) => {
       };
     }
 
-    const s3 = new S3({ region: AWS_REGION });
+    const s3 = new S3({ region: REGION_NAME });
     const params = {
       Bucket: AWS_S3_BUCKET_NAME,
       Key: fileName,

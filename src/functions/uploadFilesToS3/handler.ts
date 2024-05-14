@@ -3,7 +3,7 @@ import { S3 } from "aws-sdk";
 import { MongoClient } from "mongodb";
 import {
   headers,
-  AWS_REGION,
+  REGION_NAME,
   AWS_S3_BUCKET_NAME,
   MONGO_URI,
 } from "src/utils/mongoConfig";
@@ -39,7 +39,7 @@ export const uploadFilesToS3: APIGatewayProxyHandler = async (event) => {
       throw new Error("Files must be an array.");
     }
 
-    const s3 = new S3({ region: AWS_REGION });
+    const s3 = new S3({ region: REGION_NAME });
 
     const uploadPromises: Promise<any>[] = [];
     const uploadedFilesDetails: any[] = [];

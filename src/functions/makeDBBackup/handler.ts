@@ -1,7 +1,7 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
 import { MongoClient } from "mongodb";
 import { S3 } from "aws-sdk";
-import { MONGO_URI, headers, AWS_REGION, AWS_S3_BUCKET_NAME } from "src/utils/mongoConfig";
+import { MONGO_URI, headers, REGION_NAME, AWS_S3_BUCKET_NAME } from "src/utils/mongoConfig";
 
 const ExcelJS = require('exceljs');
 
@@ -41,7 +41,7 @@ export const backupToExcel: APIGatewayProxyHandler = async (event) => {
     const buffer = await workbook.xlsx.writeBuffer();
 
     // Upload the file to S3
-    const s3 = new S3({ region: AWS_REGION });
+    const s3 = new S3({ region: REGION_NAME });
     const fileName = `${dbName.toUpperCase()}_DB-${++backupCounter}.xlsx`; // Naming convention
     const params = {
       Bucket: AWS_S3_BUCKET_NAME,

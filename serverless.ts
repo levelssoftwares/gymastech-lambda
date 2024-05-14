@@ -29,7 +29,11 @@ require("events").EventEmitter.defaultMaxListeners = 15;
 const serverlessConfiguration: AWS = {
   service: "gymastech-lambdas",
   frameworkVersion: "3",
-  plugins: ["serverless-esbuild", "serverless-offline"],
+  plugins: [
+    "serverless-esbuild",
+    "serverless-offline",
+    "serverless-dotenv-plugin",
+  ],
   provider: {
     name: "aws",
     runtime: "nodejs20.x",
@@ -46,6 +50,7 @@ const serverlessConfiguration: AWS = {
       DB_NAME: process.env.DB_NAME,
       COLLECTION_NAME: process.env.COLLECTION_NAME,
       API_KEY: process.env.API_KEY,
+      STAGE: "${opt:stage, 'dev'}",
     },
   },
   functions: {

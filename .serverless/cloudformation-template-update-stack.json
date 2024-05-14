@@ -288,7 +288,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/findUsers.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/findUsers.zip"
         },
         "Handler": "src/functions/findUsers/handler.findDbUsers",
         "Runtime": "nodejs20.x",
@@ -298,7 +298,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -319,7 +323,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/createCompanyMainDB.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/createCompanyMainDB.zip"
         },
         "Handler": "src/functions/createCompany/handler.insertCompanyDataHandler",
         "Runtime": "nodejs20.x",
@@ -329,7 +333,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -350,7 +358,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/findUsersByDatabaseAndRole.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/findUsersByDatabaseAndRole.zip"
         },
         "Handler": "src/functions/findAllUserByRole/handler.findUsersByDatabaseAndRole",
         "Runtime": "nodejs20.x",
@@ -360,7 +368,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -381,7 +393,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/disableUser.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/disableUser.zip"
         },
         "Handler": "src/functions/disableUser/handler.toggleUserStatus",
         "Runtime": "nodejs20.x",
@@ -391,7 +403,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -412,7 +428,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/createEvent.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/createEvent.zip"
         },
         "Handler": "src/functions/createEvent/handler.createEvent",
         "Runtime": "nodejs20.x",
@@ -422,7 +438,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -443,7 +463,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/findEvents.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/findEvents.zip"
         },
         "Handler": "src/functions/findEvents/handler.fetchAllEventsHandler",
         "Runtime": "nodejs20.x",
@@ -453,7 +473,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -474,7 +498,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/deleteEvents.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/deleteEvents.zip"
         },
         "Handler": "src/functions/deleteEvent/handler.deleteEvent",
         "Runtime": "nodejs20.x",
@@ -484,7 +508,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -505,7 +533,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/createKanbanSales.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/createKanbanSales.zip"
         },
         "Handler": "src/functions/createKanbanSales/handler.createKanbanSales",
         "Runtime": "nodejs20.x",
@@ -515,7 +543,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -536,7 +568,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/findKanbanSales.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/findKanbanSales.zip"
         },
         "Handler": "src/functions/findKanbanSales/handler.fetchKanbanSales",
         "Runtime": "nodejs20.x",
@@ -546,7 +578,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -567,7 +603,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/updateKanbanSales.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/updateKanbanSales.zip"
         },
         "Handler": "src/functions/updateKanbanSales/handler.updateKanbanSales",
         "Runtime": "nodejs20.x",
@@ -577,7 +613,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -598,7 +638,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/deleteKanbanSales.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/deleteKanbanSales.zip"
         },
         "Handler": "src/functions/deleteKanbanSales/handler.deleteKanbanSales",
         "Runtime": "nodejs20.x",
@@ -608,7 +648,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -629,7 +673,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/createWorkout.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/createWorkout.zip"
         },
         "Handler": "src/functions/createWorkout/handler.createWorkout",
         "Runtime": "nodejs20.x",
@@ -639,7 +683,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -660,7 +708,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/findWorkoutsUser.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/findWorkoutsUser.zip"
         },
         "Handler": "src/functions/findWorkoutsUser/handler.findWorkoutsUser",
         "Runtime": "nodejs20.x",
@@ -670,7 +718,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -691,7 +743,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/createCheckins.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/createCheckins.zip"
         },
         "Handler": "src/functions/createCheckins/handler.createCheckins",
         "Runtime": "nodejs20.x",
@@ -701,7 +753,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -722,7 +778,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/createCheckout.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/createCheckout.zip"
         },
         "Handler": "src/functions/createCheckout/handler.updateCheckouts",
         "Runtime": "nodejs20.x",
@@ -732,7 +788,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -753,7 +813,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/fetchCheckins.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/fetchCheckins.zip"
         },
         "Handler": "src/functions/fetchCheckins/handler.fetchAllCheckinsHandler",
         "Runtime": "nodejs20.x",
@@ -763,7 +823,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -784,7 +848,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/updateUserData.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/updateUserData.zip"
         },
         "Handler": "src/functions/updateUserData/handler.updateUserData",
         "Runtime": "nodejs20.x",
@@ -794,7 +858,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -815,7 +883,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/makeDBBackup.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/makeDBBackup.zip"
         },
         "Handler": "src/functions/makeDBBackup/handler.backupToExcel",
         "Runtime": "nodejs20.x",
@@ -825,7 +893,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -846,7 +918,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/makeBackupDownload.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/makeBackupDownload.zip"
         },
         "Handler": "src/functions/makeBackupDownload/handler.downloadBackupFromS3",
         "Runtime": "nodejs20.x",
@@ -856,7 +928,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -877,7 +953,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/uploadFilesToS3.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/uploadFilesToS3.zip"
         },
         "Handler": "src/functions/uploadFilesToS3/handler.uploadFilesToS3",
         "Runtime": "nodejs20.x",
@@ -887,7 +963,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -908,7 +988,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/findDocuments.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/findDocuments.zip"
         },
         "Handler": "src/functions/findDocuments/handler.findDocuments",
         "Runtime": "nodejs20.x",
@@ -918,7 +998,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -939,7 +1023,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gymastech-lambdas/dev/1715722404729-2024-05-14T21:33:24.729Z/deleteFilesToS3.zip"
+          "S3Key": "serverless/gymastech-lambdas/dev/1715723907445-2024-05-14T21:58:27.445Z/deleteFilesToS3.zip"
         },
         "Handler": "src/functions/deleteFilesToS3/handler.deleteFilesFromS3",
         "Runtime": "nodejs20.x",
@@ -949,7 +1033,11 @@
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000"
+            "NODE_OPTIONS": "--enable-source-maps --stack-trace-limit=1000",
+            "STAGE": "dev",
+            "MONGO_URI": "mongodb+srv://victor:jkDDzQogaQ1GNJu8@ttp-gym.hukbb4u.mongodb.net/",
+            "REGION_NAME": "sa-east-1",
+            "AWS_S3_BUCKET_NAME": "gymastechdbbackup"
           }
         },
         "Role": {
@@ -963,224 +1051,224 @@
         "DeleteFilesToS3LogGroup"
       ]
     },
-    "MakeBackupDownloadLambdaVersionXwIbcShr8v917suNHBT9WJKZamRvzkhbRtO3oLvRvA": {
+    "MakeBackupDownloadLambdaVersionNJwL9TjhohYWHUqEcAG8UIzkyc8ivsg2loXxKk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MakeBackupDownloadLambdaFunction"
         },
-        "CodeSha256": "W/c3f6UweXCAWQtqXrlX6bM+b4yCas05pDQA4E4COZw="
+        "CodeSha256": "gI/b40MWa8CfvnKoW+9Yx16xWKq019OZY1w51GzZy9c="
       }
     },
-    "CreateCompanyMainDBLambdaVersionV5j97loGrekStMWcPKaT9vVQQyPd57lgo9x9aiGtXPM": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "CreateCompanyMainDBLambdaFunction"
-        },
-        "CodeSha256": "5H9JZjo2ve6hGLH9dTzAO69ASJQc8j2vP0Lkhty2/yQ="
-      }
-    },
-    "FindUsersByDatabaseAndRoleLambdaVersionmNnZUE4R0s1SWZVUmWyoOx7n7bZcczCmUzaCVG4OI": {
+    "FindUsersByDatabaseAndRoleLambdaVersionJTkj2274HRDbTOBMIXVPmaazciVhQWDcBrPhLjYngg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FindUsersByDatabaseAndRoleLambdaFunction"
         },
-        "CodeSha256": "ljfpIorqyD6XUe8ijkdx0PwpPkbnA/8UTzHiSH94gdA="
+        "CodeSha256": "JBDlPvnPZRWBmQ0nujyMFiX4f5uNj+qqWhbXxqmHSC4="
       }
     },
-    "CreateEventLambdaVersion99nokcyMIgm1wsknBF0Qn3DhIbkYYUHY46f7EI4H6c": {
+    "CreateEventLambdaVersionFwjDn4YRCAvqjeySym3JmWZX9lGge79r4vnoNzkZRSk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateEventLambdaFunction"
         },
-        "CodeSha256": "zEkrvuPFcWmlH/RqSXIQq/plQcjbibDKF5WoiUd2QKw="
+        "CodeSha256": "0LwKGoMXrxiLZ/PkmikinhlrO2RAz8soRPh6dHAPPMA="
       }
     },
-    "FindEventsLambdaVersionfjxW8xhfYpSzMPM3Ri7awlV44fzpyqW3pXiUXcTQd5U": {
+    "CreateCompanyMainDBLambdaVersionyObQL2FbYAdcVBI3MmoI0sQKCMCime0nKxhxLI48": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "FindEventsLambdaFunction"
+          "Ref": "CreateCompanyMainDBLambdaFunction"
         },
-        "CodeSha256": "S+n2DVYVbkok+DUwwCTtDY1WnB4WQqWZN+bnL4RJLrs="
+        "CodeSha256": "++C93vqAAHA5hyyh76lvev4UT+eo0jMCRoagdWQa/wU="
       }
     },
-    "DeleteEventsLambdaVersionXjaSu9ctL7Vit46e3Ae6YBEsoOrkrw5QrTfx0u8nE": {
+    "DeleteEventsLambdaVersionm1Tr9mOapBCl6V1Er5oXLsBB7wYjfeblTda67vgf9VU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteEventsLambdaFunction"
         },
-        "CodeSha256": "Y4Lqjq1WmyrO/SG+VIRTWNWs8sY82pbiBNUsAQjC8pw="
+        "CodeSha256": "VXQtlX8lOD8BMK+lA8qfuxVbBlVxhjAPM2gE+oUf4Jc="
       }
     },
-    "CreateKanbanSalesLambdaVersiondCCjl8ywaoSINY0YK6TdULkTY810VdQXlWTUt5Mwwjk": {
+    "FindEventsLambdaVersionsojQTmJIDWCx4mX66dnQileF1HP8spukMu89Ick38": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "FindEventsLambdaFunction"
+        },
+        "CodeSha256": "EZOomSn0KrOPcdRVmn4WpR0Qo7WxXLu/TvFvxqJX82Q="
+      }
+    },
+    "CreateKanbanSalesLambdaVersionKgaS7l54xHH77wrMXgHpP1tZg0Yz1k5jjDyukVb7o": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateKanbanSalesLambdaFunction"
         },
-        "CodeSha256": "zWxSpqgUydRIka1MNr+j9UyCMDSTp7v/Zd5ZR0FOQC0="
+        "CodeSha256": "F6UA3fpIM3BK18AUIH22fGkuLJaxlj2hAoIMaOkvDqo="
       }
     },
-    "FindKanbanSalesLambdaVersion8M4w7TyzzdzWbGJxi1GBm3d7dN19dMhXEBeaOGBRiE": {
+    "FindKanbanSalesLambdaVersionVKjdRNd1lkoh4S0pgfcGjqClo5gnPkbcAJgIoi5Z15Q": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FindKanbanSalesLambdaFunction"
         },
-        "CodeSha256": "pFQarh4FMlNb26zaAypACl7IrdypQbu11VsIYokUn4s="
+        "CodeSha256": "pmLhWDmGXFPtPWMk4a3wBZ0D8a+Ce7HBjv51So/eimQ="
       }
     },
-    "UpdateKanbanSalesLambdaVersionpJ1g5CdwUm74KdkeWtzvHBhU2IEEmmqtcVPzcV14tE": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "UpdateKanbanSalesLambdaFunction"
-        },
-        "CodeSha256": "d8EK/QIHU/zF5veirz5atqxDCjmT57f/1jV5vp/Pm3Q="
-      }
-    },
-    "DeleteKanbanSalesLambdaVersionaynWqapaZMd5q9KehovavYyDuywvQ5kZjnRgEvEvTqU": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "DeleteKanbanSalesLambdaFunction"
-        },
-        "CodeSha256": "8r3tcP03EKjPET6W62koXKOIayPwHxBIYTqSTOXUA+8="
-      }
-    },
-    "CreateWorkoutLambdaVersionCXW9mj0c9tX9Z8JBWIIhqj7EEjdFhXea3mQEeb2Njk": {
+    "CreateWorkoutLambdaVersionP8dTnfF8CgYa8PRIdCt4rArdtVKahH9DvIPjWoXeI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateWorkoutLambdaFunction"
         },
-        "CodeSha256": "bw0EC70gfrdfSW8e7ypaqPnajSMe1IOYZ5jQVuPTK6I="
+        "CodeSha256": "xlCL8LSo1tPcFuYOT3EGQeSQxdylUkd25sI8cuSpSCI="
       }
     },
-    "FindWorkoutsUserLambdaVersionKueh0Zt7YdzzGbBMFaSeRZ3vh5ZM9Ekv7lE9lYFJQ": {
+    "DeleteKanbanSalesLambdaVersionKV5jlAJoN06nl97HSACvjOxCP6GNHkhRk6VBHoODH0": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteKanbanSalesLambdaFunction"
+        },
+        "CodeSha256": "ezrQjckx1RgByrriuw5iuPbjsmUYzi0qD01TaGH3II4="
+      }
+    },
+    "FindWorkoutsUserLambdaVersionW2EABJoz7iFoomb5ZgTJySATfp5u0rZzslg7Uf4KUE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FindWorkoutsUserLambdaFunction"
         },
-        "CodeSha256": "IeXgKTNESRxnR3fuIHM7IDJk+u+kzsygFYDmg/hOcho="
+        "CodeSha256": "oEGQm2eMwUsk8J+gYHqXBkY8ypGWxmtLclz3hk/Fp7c="
       }
     },
-    "CreateCheckinsLambdaVersioncroQ1d1cL3H3GjEs7UBarRaUz9PkjPfMx5oDvphUts": {
+    "CreateCheckinsLambdaVersionBLIInG0rLyhzosCqKLGMqH7zHZRge1yV3sR7yzDe9f4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateCheckinsLambdaFunction"
         },
-        "CodeSha256": "EgUr6tRti1dzL2gGopFtgw8R2DG3Djgo5eUtB1na6q4="
+        "CodeSha256": "n8D5yEp5k+c65Rwow6N2UVMOto3ppanS77tcFpNvUYo="
       }
     },
-    "CreateCheckoutLambdaVersionQOTPpWX1WXGTHXfFQx1l6mWsNRrgdhsYFSeTvqYG0": {
+    "CreateCheckoutLambdaVersionjqQ6tggew8xWWKXDFJHSjMyHKjSfuwG13ZcKamNiY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateCheckoutLambdaFunction"
         },
-        "CodeSha256": "YwRsW4K8JlHvDfTb/o35Hrh+6jmJremowgPt9rgJa/k="
+        "CodeSha256": "tXGNAFhtHsz/GgJpSMXfs/wWzA7E6CXzN20DW5Oc+f4="
       }
     },
-    "FetchCheckinsLambdaVersionVRssBFJm6GUBZoQXdHMPnV8t7gYuRE4UUymTX3U": {
+    "FetchCheckinsLambdaVersionnf9MNvAiQs8iJLuFxdJq9Lt3BQQhoL8GJMQndC24Fc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FetchCheckinsLambdaFunction"
         },
-        "CodeSha256": "UlnrggSYavlF/kwjSog4EETjs7T0B8P7gWEM93k4vqA="
+        "CodeSha256": "f0J15KXWlL+4e7l5ypdgKor2pxbHWvpOHsHblFRft4Q="
       }
     },
-    "UpdateUserDataLambdaVersionKLwT0XJFQd3BnEMrfOKUOYwlsd5hyhXhVjglWWxICD4": {
+    "UpdateUserDataLambdaVersion6fVn3dO4wSiH7muzWaaGe8UvEsnwQ8jAhsJrUtjrU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateUserDataLambdaFunction"
         },
-        "CodeSha256": "XApEbqwCvT/oCU07hhGUGKKinec2wcY7l0hoJbTx6Ow="
+        "CodeSha256": "qyjZ38QntEma+IFj4K4ea6+iK4NWUfPw7LOhibJ/D4I="
       }
     },
-    "UploadFilesToS3LambdaVersiond4JVjbd55MfWgQr1QkM5HX5OzqVLtVcs4nZQxU": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "UploadFilesToS3LambdaFunction"
-        },
-        "CodeSha256": "WnJC9Z8V58nADfnCISCFo2h95AaxoQf79da/ZGyAZwg="
-      }
-    },
-    "FindDocumentsLambdaVersionGLmHbmTfQuut5Dtc2TBbmtCpn4XEkp3MUce02c": {
+    "FindDocumentsLambdaVersionQ2aRXeu7VwDMy51RjqY7djERtkdOHLJG7mMNeg5PRw4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FindDocumentsLambdaFunction"
         },
-        "CodeSha256": "Nn1AEf4JwEaPfpq1o4KMVrF10iA7Fl+yG/eLWIp7HKU="
+        "CodeSha256": "A/MkLQc4942jM6ghgr/OH95MvZQegrWpIqPc3dmgHMU="
       }
     },
-    "DeleteFilesToS3LambdaVersionOz3vRfvumigm7ApWjHPcpzvkZ9320hUATeSz8UGavY": {
+    "UploadFilesToS3LambdaVersiondQkBFvyiqfRS5vxMBFBaN9d12Xp3z58Yiyvopwl7o": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UploadFilesToS3LambdaFunction"
+        },
+        "CodeSha256": "q68sf/khZtz7q8I7f9FDFKaAqsh7/rSJYVuIsxtnXM8="
+      }
+    },
+    "UpdateKanbanSalesLambdaVersion6S1qrRPocvEJvhhrN6Ksu7cJrCL15gBVniMxSVwDE": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UpdateKanbanSalesLambdaFunction"
+        },
+        "CodeSha256": "Q+dYCHE+7jQGlw7XJiJetbjqBa8J0kC/ZqgVSsVGXtU="
+      }
+    },
+    "DeleteFilesToS3LambdaVersionF2BAfoceEhxGBgJgVw0Z56vOzaUCTBzgfDHKo0P7dA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteFilesToS3LambdaFunction"
         },
-        "CodeSha256": "MgcXQ8duLuuDWfhaShyyG0ldfHpdrp+oPe+ZLX7jdE8="
+        "CodeSha256": "1wtpvcc84Rc6m4qE1FgkWJ2UoFrS6rj2ChVOUbucg/8="
       }
     },
-    "FindUsersLambdaVersionNuOMThiZT1npTVisZQEeSCD2af58p5t8rliWVMzP0": {
+    "FindUsersLambdaVersionx9Iujsfame59Lg3oEts9FrVC2tjWK2em3HB0weZj0dU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FindUsersLambdaFunction"
         },
-        "CodeSha256": "5CQB28ZgwnQ72MZ6bjOxndEZTkqKxIlOeoKnz1GGlrY="
+        "CodeSha256": "7GE1J/c7cdVPKwWnxsiPzHZveRrsxaQNiTEUFvI5TPA="
       }
     },
-    "DisableUserLambdaVersion5xvfwSik7Zk98pC3REesXS6kTS1S6VgFtvz2osA2ZmE": {
+    "DisableUserLambdaVersionqdAf4SEdObd3vRdtCKh8rIHhjW129eKyHF26CqHM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DisableUserLambdaFunction"
         },
-        "CodeSha256": "suB3BAmIODDu106D+n215tvVbXEOH7kna+zLqrAraTw="
+        "CodeSha256": "N2cMpGq7Rd5D9nayMQMyJ9v1+Sr8FrIaaZVY07k5Vlc="
       }
     },
-    "MakeDBBackupLambdaVersionrUPUHH2OXGzO4RuHrhQEJCdvzWRrKcO8Zfe7cFYmaM": {
+    "MakeDBBackupLambdaVersionswtVjttol2UFrVBxWQKlfn4hOKEVmVQuPvGTduTA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MakeDBBackupLambdaFunction"
         },
-        "CodeSha256": "H1dmwYqVzVbsd4cucxwKsSoW0+Gopro+QSAKMpeftoU="
+        "CodeSha256": "Gas0ExI79WqqB3aBBKiXt91sUYwQQhaLT9iQnhV8d7Y="
       }
     },
     "ApiGatewayRestApi": {
@@ -3048,7 +3136,7 @@
         "DeleteFilesToS3LambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1715722402741": {
+    "ApiGatewayDeployment1715723905135": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -3922,25 +4010,16 @@
     "MakeBackupDownloadLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MakeBackupDownloadLambdaVersionXwIbcShr8v917suNHBT9WJKZamRvzkhbRtO3oLvRvA"
+        "Ref": "MakeBackupDownloadLambdaVersionNJwL9TjhohYWHUqEcAG8UIzkyc8ivsg2loXxKk"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-MakeBackupDownloadLambdaFunctionQualifiedArn"
       }
     },
-    "CreateCompanyMainDBLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "CreateCompanyMainDBLambdaVersionV5j97loGrekStMWcPKaT9vVQQyPd57lgo9x9aiGtXPM"
-      },
-      "Export": {
-        "Name": "sls-gymastech-lambdas-dev-CreateCompanyMainDBLambdaFunctionQualifiedArn"
-      }
-    },
     "FindUsersByDatabaseAndRoleLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FindUsersByDatabaseAndRoleLambdaVersionmNnZUE4R0s1SWZVUmWyoOx7n7bZcczCmUzaCVG4OI"
+        "Ref": "FindUsersByDatabaseAndRoleLambdaVersionJTkj2274HRDbTOBMIXVPmaazciVhQWDcBrPhLjYngg"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-FindUsersByDatabaseAndRoleLambdaFunctionQualifiedArn"
@@ -3949,34 +4028,43 @@
     "CreateEventLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateEventLambdaVersion99nokcyMIgm1wsknBF0Qn3DhIbkYYUHY46f7EI4H6c"
+        "Ref": "CreateEventLambdaVersionFwjDn4YRCAvqjeySym3JmWZX9lGge79r4vnoNzkZRSk"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-CreateEventLambdaFunctionQualifiedArn"
       }
     },
-    "FindEventsLambdaFunctionQualifiedArn": {
+    "CreateCompanyMainDBLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FindEventsLambdaVersionfjxW8xhfYpSzMPM3Ri7awlV44fzpyqW3pXiUXcTQd5U"
+        "Ref": "CreateCompanyMainDBLambdaVersionyObQL2FbYAdcVBI3MmoI0sQKCMCime0nKxhxLI48"
       },
       "Export": {
-        "Name": "sls-gymastech-lambdas-dev-FindEventsLambdaFunctionQualifiedArn"
+        "Name": "sls-gymastech-lambdas-dev-CreateCompanyMainDBLambdaFunctionQualifiedArn"
       }
     },
     "DeleteEventsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteEventsLambdaVersionXjaSu9ctL7Vit46e3Ae6YBEsoOrkrw5QrTfx0u8nE"
+        "Ref": "DeleteEventsLambdaVersionm1Tr9mOapBCl6V1Er5oXLsBB7wYjfeblTda67vgf9VU"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-DeleteEventsLambdaFunctionQualifiedArn"
       }
     },
+    "FindEventsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "FindEventsLambdaVersionsojQTmJIDWCx4mX66dnQileF1HP8spukMu89Ick38"
+      },
+      "Export": {
+        "Name": "sls-gymastech-lambdas-dev-FindEventsLambdaFunctionQualifiedArn"
+      }
+    },
     "CreateKanbanSalesLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateKanbanSalesLambdaVersiondCCjl8ywaoSINY0YK6TdULkTY810VdQXlWTUt5Mwwjk"
+        "Ref": "CreateKanbanSalesLambdaVersionKgaS7l54xHH77wrMXgHpP1tZg0Yz1k5jjDyukVb7o"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-CreateKanbanSalesLambdaFunctionQualifiedArn"
@@ -3985,43 +4073,34 @@
     "FindKanbanSalesLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FindKanbanSalesLambdaVersion8M4w7TyzzdzWbGJxi1GBm3d7dN19dMhXEBeaOGBRiE"
+        "Ref": "FindKanbanSalesLambdaVersionVKjdRNd1lkoh4S0pgfcGjqClo5gnPkbcAJgIoi5Z15Q"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-FindKanbanSalesLambdaFunctionQualifiedArn"
       }
     },
-    "UpdateKanbanSalesLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "UpdateKanbanSalesLambdaVersionpJ1g5CdwUm74KdkeWtzvHBhU2IEEmmqtcVPzcV14tE"
-      },
-      "Export": {
-        "Name": "sls-gymastech-lambdas-dev-UpdateKanbanSalesLambdaFunctionQualifiedArn"
-      }
-    },
-    "DeleteKanbanSalesLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "DeleteKanbanSalesLambdaVersionaynWqapaZMd5q9KehovavYyDuywvQ5kZjnRgEvEvTqU"
-      },
-      "Export": {
-        "Name": "sls-gymastech-lambdas-dev-DeleteKanbanSalesLambdaFunctionQualifiedArn"
-      }
-    },
     "CreateWorkoutLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateWorkoutLambdaVersionCXW9mj0c9tX9Z8JBWIIhqj7EEjdFhXea3mQEeb2Njk"
+        "Ref": "CreateWorkoutLambdaVersionP8dTnfF8CgYa8PRIdCt4rArdtVKahH9DvIPjWoXeI"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-CreateWorkoutLambdaFunctionQualifiedArn"
       }
     },
+    "DeleteKanbanSalesLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteKanbanSalesLambdaVersionKV5jlAJoN06nl97HSACvjOxCP6GNHkhRk6VBHoODH0"
+      },
+      "Export": {
+        "Name": "sls-gymastech-lambdas-dev-DeleteKanbanSalesLambdaFunctionQualifiedArn"
+      }
+    },
     "FindWorkoutsUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FindWorkoutsUserLambdaVersionKueh0Zt7YdzzGbBMFaSeRZ3vh5ZM9Ekv7lE9lYFJQ"
+        "Ref": "FindWorkoutsUserLambdaVersionW2EABJoz7iFoomb5ZgTJySATfp5u0rZzslg7Uf4KUE"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-FindWorkoutsUserLambdaFunctionQualifiedArn"
@@ -4030,7 +4109,7 @@
     "CreateCheckinsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateCheckinsLambdaVersioncroQ1d1cL3H3GjEs7UBarRaUz9PkjPfMx5oDvphUts"
+        "Ref": "CreateCheckinsLambdaVersionBLIInG0rLyhzosCqKLGMqH7zHZRge1yV3sR7yzDe9f4"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-CreateCheckinsLambdaFunctionQualifiedArn"
@@ -4039,7 +4118,7 @@
     "CreateCheckoutLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateCheckoutLambdaVersionQOTPpWX1WXGTHXfFQx1l6mWsNRrgdhsYFSeTvqYG0"
+        "Ref": "CreateCheckoutLambdaVersionjqQ6tggew8xWWKXDFJHSjMyHKjSfuwG13ZcKamNiY"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-CreateCheckoutLambdaFunctionQualifiedArn"
@@ -4048,7 +4127,7 @@
     "FetchCheckinsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FetchCheckinsLambdaVersionVRssBFJm6GUBZoQXdHMPnV8t7gYuRE4UUymTX3U"
+        "Ref": "FetchCheckinsLambdaVersionnf9MNvAiQs8iJLuFxdJq9Lt3BQQhoL8GJMQndC24Fc"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-FetchCheckinsLambdaFunctionQualifiedArn"
@@ -4057,34 +4136,43 @@
     "UpdateUserDataLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateUserDataLambdaVersionKLwT0XJFQd3BnEMrfOKUOYwlsd5hyhXhVjglWWxICD4"
+        "Ref": "UpdateUserDataLambdaVersion6fVn3dO4wSiH7muzWaaGe8UvEsnwQ8jAhsJrUtjrU"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-UpdateUserDataLambdaFunctionQualifiedArn"
       }
     },
-    "UploadFilesToS3LambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "UploadFilesToS3LambdaVersiond4JVjbd55MfWgQr1QkM5HX5OzqVLtVcs4nZQxU"
-      },
-      "Export": {
-        "Name": "sls-gymastech-lambdas-dev-UploadFilesToS3LambdaFunctionQualifiedArn"
-      }
-    },
     "FindDocumentsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FindDocumentsLambdaVersionGLmHbmTfQuut5Dtc2TBbmtCpn4XEkp3MUce02c"
+        "Ref": "FindDocumentsLambdaVersionQ2aRXeu7VwDMy51RjqY7djERtkdOHLJG7mMNeg5PRw4"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-FindDocumentsLambdaFunctionQualifiedArn"
       }
     },
+    "UploadFilesToS3LambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UploadFilesToS3LambdaVersiondQkBFvyiqfRS5vxMBFBaN9d12Xp3z58Yiyvopwl7o"
+      },
+      "Export": {
+        "Name": "sls-gymastech-lambdas-dev-UploadFilesToS3LambdaFunctionQualifiedArn"
+      }
+    },
+    "UpdateKanbanSalesLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UpdateKanbanSalesLambdaVersion6S1qrRPocvEJvhhrN6Ksu7cJrCL15gBVniMxSVwDE"
+      },
+      "Export": {
+        "Name": "sls-gymastech-lambdas-dev-UpdateKanbanSalesLambdaFunctionQualifiedArn"
+      }
+    },
     "DeleteFilesToS3LambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteFilesToS3LambdaVersionOz3vRfvumigm7ApWjHPcpzvkZ9320hUATeSz8UGavY"
+        "Ref": "DeleteFilesToS3LambdaVersionF2BAfoceEhxGBgJgVw0Z56vOzaUCTBzgfDHKo0P7dA"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-DeleteFilesToS3LambdaFunctionQualifiedArn"
@@ -4093,7 +4181,7 @@
     "FindUsersLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FindUsersLambdaVersionNuOMThiZT1npTVisZQEeSCD2af58p5t8rliWVMzP0"
+        "Ref": "FindUsersLambdaVersionx9Iujsfame59Lg3oEts9FrVC2tjWK2em3HB0weZj0dU"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-FindUsersLambdaFunctionQualifiedArn"
@@ -4102,7 +4190,7 @@
     "DisableUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DisableUserLambdaVersion5xvfwSik7Zk98pC3REesXS6kTS1S6VgFtvz2osA2ZmE"
+        "Ref": "DisableUserLambdaVersionqdAf4SEdObd3vRdtCKh8rIHhjW129eKyHF26CqHM"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-DisableUserLambdaFunctionQualifiedArn"
@@ -4111,7 +4199,7 @@
     "MakeDBBackupLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MakeDBBackupLambdaVersionrUPUHH2OXGzO4RuHrhQEJCdvzWRrKcO8Zfe7cFYmaM"
+        "Ref": "MakeDBBackupLambdaVersionswtVjttol2UFrVBxWQKlfn4hOKEVmVQuPvGTduTA"
       },
       "Export": {
         "Name": "sls-gymastech-lambdas-dev-MakeDBBackupLambdaFunctionQualifiedArn"

@@ -3,7 +3,7 @@ import { S3 } from "aws-sdk";
 import { MongoClient } from "mongodb";
 import {
   headers,
-  AWS_REGION,
+  REGION_NAME,
   AWS_S3_BUCKET_NAME,
   MONGO_URI,
 } from "src/utils/mongoConfig";
@@ -23,7 +23,7 @@ export const deleteFilesFromS3: APIGatewayProxyHandler = async (event) => {
       throw new Error("File names not provided or invalid.");
     }
 
-    const s3 = new S3({ region: AWS_REGION });
+    const s3 = new S3({ region: REGION_NAME });
 
     const deletePromises: Promise<any>[] = [];
 
