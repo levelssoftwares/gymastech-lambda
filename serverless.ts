@@ -24,7 +24,7 @@ import {
   deleteFilesToS3,
 } from "@functions/index";
 
-require('events').EventEmitter.defaultMaxListeners = 15;
+require("events").EventEmitter.defaultMaxListeners = 15;
 
 const serverlessConfiguration: AWS = {
   service: "gymastech-lambdas",
@@ -32,7 +32,7 @@ const serverlessConfiguration: AWS = {
   plugins: ["serverless-esbuild", "serverless-offline"],
   provider: {
     name: "aws",
-    runtime: "nodejs14.x",
+    runtime: "nodejs20.x",
     region: "sa-east-1",
     stage: "dev",
     apiGateway: {
